@@ -13,7 +13,7 @@ namespace debugws2
 
       for (int x = 0; x < data.Length; x++)
       {
-        total += cnv(data[x]);
+        total += cnv(data[x]);//check if lines arent being skipped
       }
 
       return total;
@@ -22,7 +22,8 @@ namespace debugws2
     private int cnv(string val)
     {
       Int32.TryParse(val, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out int value);
-
+      //Console.Write("String: "+ val);
+      //Console.WriteLine(" - INT {0}: "+ value);
       return value;
     }
 
